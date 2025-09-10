@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left-side menu -->
+        <div class="menu">
+            <ul>
+                <li><a href="#" onclick="showContent('marks')">Marks</a></li>
+                <li><a href="#" onclick="showContent('attendance')">Attendance</a></li>
+                <li><a href="#" onclick="showContent('assignments')">Assignments</a></li>
+                <li><a href="#" onclick="showContent('schedule')">Class Schedule</a></li>
+            </ul>
+        </div>
+
+        <!-- Right-side content -->
+        <div class="content" id="content">
+            <h1>Welcome to the Student Portal</h1>
+            <p>Select a menu on the left to view details.</p>
+        </div>
+    </div>
+
+    <script>
+        function showContent(section) {
+            let content = document.getElementById('content');
+            
+            switch (section) {
+                case 'marks':
+                    content.innerHTML = `
+                        <h1>Marks</h1>
+                        <p><strong>Maths:</strong> 85</p>
+                        <p><strong>Physics:</strong> 90</p>
+                        <p><strong>Chemistry:</strong> 88</p>
+                    `;
+                    break;
+                case 'attendance':
+                    content.innerHTML = `
+                        <h1>Attendance</h1>
+                        <p>Present: 95%</p>
+                        <p>Absent: 5%</p>
+                    `;
+                    break;
+                case 'assignments':
+                    content.innerHTML = `
+                        <h1>Assignments</h1>
+                        <p><strong>Math Assignment:</strong> Submitted</p>
+                        <p><strong>Physics Assignment:</strong> Pending</p>
+                    `;
+                    break;
+                case 'schedule':
+                    content.innerHTML = `
+                        <h1>Class Schedule</h1>
+                        <p><strong>Monday:</strong> Math, Physics</p>
+                        <p><strong>Tuesday:</strong> Chemistry, English</p>
+                        <p><strong>Wednesday:</strong> Biology, History</p>
+                    `;
+                    break;
+                default:
+                    content.innerHTML = `<h1>Welcome to the Student Portal</h1><p>Select a menu on the left to view details.</p>`;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
